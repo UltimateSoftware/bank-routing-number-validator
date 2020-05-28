@@ -24,8 +24,8 @@ function ABARoutingNumberIsValid(routingNumberToTest) {
 
   //The first two digits of the nine digit RTN must be in the ranges 00 through 12, 21 through 32, 61 through 72, or 80.
   //https://en.wikipedia.org/wiki/Routing_transit_number
-  const firstTwo = parseInt(routing.substring(0, 2));
-  const firstTwoValid =  (0 <= firstTwo && firstTwo <= 12)
+  var firstTwo = parseInt(routing.substring(0, 2));
+  var firstTwoValid =  (0 <= firstTwo && firstTwo <= 12)
                       || (21 <= firstTwo && firstTwo <= 32)
                       || (61 <= firstTwo && firstTwo <= 72)
                       || firstTwo === 80;
@@ -35,7 +35,7 @@ function ABARoutingNumberIsValid(routingNumberToTest) {
 
   //this is the checksum
   //http://www.siccolo.com/Articles/SQLScripts/how-to-create-sql-to-calculate-routing-check-digit.html
-  const weights = [3, 7 ,1];
+  var weights = [3, 7 ,1];
   var sum = 0;
   for (var i=0 ; i<8; i++) {
     sum += parseInt(routing[i]) * weights[i % 3];

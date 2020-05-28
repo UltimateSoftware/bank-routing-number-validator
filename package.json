@@ -1,6 +1,6 @@
 {
   "name": "bank-routing-number-validator",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Validates ABA Routing Numbers",
   "main": "index.js",
   "scripts": {
